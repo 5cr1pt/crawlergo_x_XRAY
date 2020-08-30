@@ -6,5 +6,4 @@ unzip crawlergo_linux_amd64.zip
 unzip xray_linux_amd64.zip
 rm -rf crawlergo_linux_amd64.zip
 rm -rf xray_linux_amd64.zip
-mv crawlergo ./crawlergo/
 mv xray_linux_amd64 ./xray/

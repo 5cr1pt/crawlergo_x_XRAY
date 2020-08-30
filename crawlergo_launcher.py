@@ -21,7 +21,7 @@ def opt2File2(subdomains):
 
 def main(data1):
 	target = data1
-	cmd = ["./crawlergo/crawlergo", "-c", chromedriver, "--custom-headers", "{\"User-Agent\": \"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.0 Safari/537.36\"}", "-t", "5","--fuzz-path", "--robots-path", "--push-to-proxy", "http://127.0.0.1:7777/", "--push-pool-max", "999","--output-mode", "json" , target]
+	cmd = ["./crawlergo", "-c", chromedriver, "--custom-headers", "{\"User-Agent\": \"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.0 Safari/537.36\"}", "-t", "5","--fuzz-path", "--robots-path", "--push-to-proxy", "http://127.0.0.1:7777/", "--push-pool-max", "999","--output-mode", "json" , target]
 	rsp = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	output, error = rsp.communicate()
 	try:
