@@ -6,6 +6,54 @@ https://github.com/0Kee-Team/crawlergo
 
 https://github.com/chaitin/xray
 
+## 20200829
+
+```
+1. 添加下载 crawlergo 和 xray 最新 release 的脚本
+2. 添加安装 chrome 和 chromedriver 的脚本
+3. 修改 webhook 为推送到 slack webhook app
+```
+
+### 操作步骤
+- 使用 `install_chrome_chromedriver.sh` 安装 chrome 和 chromedriver
+- 使用 `install_crawlergo_xray.sh` 下载最新版 crawlergo 和 xray 到相应的文件夹
+- 在 Slack 中添加 [Incoming WebHooks](https://slack.com/apps/A0F7XDUAZ-incoming-webhooks) app; 配置 webhook.py 中的 slack_webhook_url 并启动 webhook.py
+
+```bash
+# 默认 webhook 端口为 5000
+$ python3 webhook.py
+```
+- 进入 xray 文件夹 `./xray`；运行 xray 可执行文件生成证书和初始配置文件，并退出
+
+```bash
+$ cd ./xray
+$ ./xray_linux_amd64
+```
+- 将证书添加到系统信任证书
+
+```bash
+$ sudo cp ca.crt.crt /usr/local/share/ca-certificates
+$ sudo update-ca-certificates
+```
+- 自定义 xray 的配置文件 `config.yaml`
+- 启动 xray 并推送到 webhook
+
+```bash
+# 默认 xray 监听端口为 7777; 默认推送到 webhook 的 5000 端口
+$ ./xray_linux_amd64 webscan --listen 127.0.0.1:7777 --webhook-output http://127.0.0.1:5000/webhook --html-output xray_result.html
+```
+- 开启新的终端；将目标网址放在 `targets.txt` 文件中；启动 crawlergo
+
+```bash
+# 默认 chromedriver 路径为 /usr/local/bin/chromedriver
+$ python3 crawlergo_launcher.py
+```
+
+![image](https://raw.githubusercontent.com/timwhitez/crawlergo_x_XRAY/master/img/slack_webhook.jpg)
+
+> 参考：
+https://github.com/undefinedsec/crawlergo-to-xray
+
 ## 20190115更新，launcher_new.py使用crawlergo提供的方法推送请求给xray
 
 crawlergo默认推送方法有个不足就是无法与爬虫过程异步进行。使用launcher.py可以异步节省时间。
@@ -30,7 +78,7 @@ crawlergo默认推送方法有个不足就是无法与爬虫过程异步进行�
 
 爬取和请求的过程使用了多线程和队列使得请求不会阻塞下一个页面的爬取
 
-## 用法 
+## 用法
 
 #### 1. 下载xray最新的release, 下载crawlergo最新的release
 

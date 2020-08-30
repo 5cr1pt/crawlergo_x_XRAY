@@ -7,13 +7,9 @@ import requests
 import warnings
 warnings.filterwarnings(action='ignore')
 
+# 自定义 chromedriver 路径
+chromedriver = "/usr/local/bin/chromedriver"
 
-def opt2File(paths):
-	try:
-		f = open('crawl_result.txt','a')
-		f.write(paths + '\n')
-	finally:
-		f.close()
 
 def opt2File2(subdomains):
 	try:
@@ -23,10 +19,9 @@ def opt2File2(subdomains):
 		f.close()
 
 
-
 def main(data1):
 	target = data1
-	cmd = ["./crawlergo", "-c", "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe","-t", "5","-f","smart","--fuzz-path", "--push-to-proxy", "http://127.0.0.1:7888/", "--push-pool-max", "10","--output-mode", "json" , target]
+	cmd = ["./crawlergo/crawlergo", "-c", chromedriver, "--custom-headers", "{\"User-Agent\": \"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.0 Safari/537.36\"}", "-t", "5","--fuzz-path", "--robots-path", "--push-to-proxy", "http://127.0.0.1:7777/", "--push-pool-max", "999","--output-mode", "json" , target]
 	rsp = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	output, error = rsp.communicate()
 	try:
@@ -38,9 +33,10 @@ def main(data1):
 	print(data1)
 	print("[crawl ok]")
 	for subd in sub_domain:
-		opt2File2(subd)
+		# 略过空白行
+		if subd.strip():
+			opt2File2(subd)
 	print("[scanning]")
-
 
 
 if __name__ == '__main__':
