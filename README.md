@@ -49,7 +49,7 @@ $ ./xray_linux_amd64 webscan --listen 127.0.0.1:7777 --webhook-output http://127
 $ python3 crawlergo_launcher.py
 ```
 
-![image](https://raw.githubusercontent.com/timwhitez/crawlergo_x_XRAY/master/img/slack_webhook.jpg)
+![slack alert](https://raw.githubusercontent.com/5cr1pt/crawlergo_x_XRAY/master/img/slack_webhook.jpg)
 
 > 参考：
 https://github.com/undefinedsec/crawlergo-to-xray
