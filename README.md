@@ -7,6 +7,9 @@ https://github.com/0Kee-Team/crawlergo
 https://github.com/chaitin/xray
 
 ## 20200829
+![OS Type](https://img.shields.io/badge/OS--Type-Kali-blue)
+![Python3](https://img.shields.io/badge/Python-v3-blue)
+![Webhook](https://img.shields.io/badge/Webhook-Slack-brightgreen)
 
 ```
 1. 添加下载 crawlergo 和 xray 最新 release 的脚本
