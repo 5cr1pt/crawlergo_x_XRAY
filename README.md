@@ -13,7 +13,7 @@ https://github.com/chaitin/xray
 
 ```
 1. 添加下载 crawlergo 和 xray 最新 release 的脚本
-2. 添加安装 chrome 和 chromedriver 的脚本
+2. 添加安装 chrome 和 chromedriver 的脚本（仅支持基于 Debian 的 Linux 发行版
 3. 修改 webhook 为推送到 slack webhook app
 ```
 
