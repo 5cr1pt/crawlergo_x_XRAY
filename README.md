@@ -20,8 +20,9 @@ https://github.com/chaitin/xray
 ### 操作步骤
 
 ```bash
-$ python3 -m pip install flask  # 安装 flask
-sudo apt-get install ca-certificates    # 安装 ca-certificates
+# 安装依赖
+$ python3 -m pip install -r requirements.txt  # 安装 flask
+$ sudo apt-get install ca-certificates    # 安装 ca-certificates
 ```
 
 - 使用 `install_chrome_chromedriver.sh` 安装 chrome 和 chromedriver
