@@ -18,6 +18,12 @@ https://github.com/chaitin/xray
 ```
 
 ### 操作步骤
+
+```bash
+$ python3 -m pip install flask  # 安装 flask
+sudo apt-get install ca-certificates    # 安装 ca-certificates
+```
+
 - 使用 `install_chrome_chromedriver.sh` 安装 chrome 和 chromedriver
 - 使用 `install_crawlergo_xray.sh` 下载最新版 crawlergo 和 xray 到相应的文件夹
 - 在 Slack 中添加 [Incoming WebHooks](https://slack.com/apps/A0F7XDUAZ-incoming-webhooks) app; 配置 webhook.py 中的 slack_webhook_url 并启动 webhook.py
@@ -30,12 +36,12 @@ $ python3 webhook.py
 
 ```bash
 $ cd ./xray
-$ ./xray_linux_amd64
+$ ./xray_linux_amd64 genca
 ```
 - 将证书添加到系统信任证书
 
 ```bash
-$ sudo cp ca.crt.crt /usr/local/share/ca-certificates
+$ sudo cp ca.crt /usr/local/share/ca-certificates
 $ sudo update-ca-certificates
 ```
 - 自定义 xray 的配置文件 `config.yaml`
