@@ -21,7 +21,7 @@ https://github.com/chaitin/xray
 
 ```bash
 # 安装依赖
-$ python3 -m pip install -r requirements.txt  # 安装 flask
+$ python3 -m pip install -r requirements.txt  # 安装 requests, flask, simplejson
 $ sudo apt-get install ca-certificates    # 安装 ca-certificates
 ```
 
