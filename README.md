@@ -31,7 +31,7 @@ $ sudo apt-get install ca-certificates    # 安装 ca-certificates
 
 - 使用 `install_chrome_chromedriver.sh` 安装 chrome 和 chromedriver
 - 使用 `install_crawlergo_xray.sh` 下载最新版 crawlergo 和 xray 到相应的文件夹
-- 在 Slack 中添加 [Incoming WebHooks](https://slack.com/apps/A0F7XDUAZ-incoming-webhooks) app; 配置 webhook.py 中的 slack_webhook_url 并启动 webhook.py
+- 在 Slack 中添加 [Incoming WebHooks](https://slack.com/apps/A0F7XDUAZ-incoming-webhooks) app（或者创建 Telegram Bot）; 配置 `config.ini`，选择推送平台并填入参数，启动 webhook.py
 
 ```bash
 # 默认 webhook 端口为 5000
