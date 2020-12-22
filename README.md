@@ -1,4 +1,7 @@
 # crawlergo_x_XRAY
+![OS Type](https://img.shields.io/badge/OS--Type-Kali-blue)
+![Python3](https://img.shields.io/badge/Python-v3-blue)
+![Push-Notification](https://img.shields.io/badge/Push--Notification-Slack%2FTelegram-blue)
 
 360 0Kee-Team 的 crawlergo动态爬虫 结合 长亭XRAY扫描器的被动扫描功能 (其它被动扫描器同理)
 
@@ -6,10 +9,11 @@ https://github.com/0Kee-Team/crawlergo
 
 https://github.com/chaitin/xray
 
+## 20201222
+
+添加 Telegram Bot 支持，关于创建 Bot 以及 Bot API 详情，查看：[https://core.telegram.org/bots](https://core.telegram.org/bots)
+
 ## 20200829
-![OS Type](https://img.shields.io/badge/OS--Type-Kali-blue)
-![Python3](https://img.shields.io/badge/Python-v3-blue)
-![Webhook](https://img.shields.io/badge/Webhook-Slack-brightgreen)
 
 ```
 1. 添加下载 crawlergo 和 xray 最新 release 的脚本
@@ -21,7 +25,7 @@ https://github.com/chaitin/xray
 
 ```bash
 # 安装依赖
-$ python3 -m pip install -r requirements.txt  # 安装 requests, flask, simplejson
+$ python3 -m pip install -r requirements.txt  # 安装 requests, flask, simplejson, pyTelegramBotAPI
 $ sudo apt-get install ca-certificates    # 安装 ca-certificates
 ```
 
