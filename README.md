@@ -56,7 +56,7 @@ $ ./xray_linux_amd64 webscan --listen 127.0.0.1:7777 --webhook-output http://127
 
 ```bash
 # 默认 chromedriver 路径为 /usr/local/bin/chromedriver
-$ python3 crawlergo_launcher.py
+$ python3 crawlergo_launcher.py # 可选择指定目标文件作为参数，如无指定，默认当前目录下的 targets.txt
 ```
 
 ![slack alert](https://raw.githubusercontent.com/5cr1pt/crawlergo_x_XRAY/master/img/slack_webhook.jpg)

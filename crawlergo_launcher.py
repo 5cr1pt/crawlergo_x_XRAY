@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # coding: utf-8
+import sys
 import simplejson
 import threading
 import subprocess
@@ -40,7 +41,10 @@ def main(data1):
 
 
 if __name__ == '__main__':
-	file = open("targets.txt")
+	try:
+		file = open(sys.argv[1])
+	except:
+		file = open("targets.txt")
 	for text in file.readlines():
 		data1 = text.strip('\n')
 		main(data1)
